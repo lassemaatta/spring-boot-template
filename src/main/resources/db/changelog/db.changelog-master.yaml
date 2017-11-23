@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+- changeSet:
+      id: add-initial-user-table
+      author: lassemaatta
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: version
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creation_time
+                  type: timestamp with timezone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modification_time
+                  type: timestamp with timezone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deletion_time
+                  type: timestamp with timezone
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
