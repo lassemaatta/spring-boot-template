@@ -26,7 +26,7 @@ public class UserEntityTest {
 
     @Test
     public void storing_valid_users() {
-        userRepository.save(
+        userRepository.saveAll(
                 ImmutableList.of(
                         UserEntity.create("user 1"),
                         UserEntity.create("user 2")
@@ -42,7 +42,7 @@ public class UserEntityTest {
 
     @Test(expected = DataIntegrityViolationException.class)
     public void duplicate_username_throws_exception() {
-        userRepository.save(
+        userRepository.saveAll(
                 ImmutableList.of(
                         UserEntity.create("user 1"),
                         UserEntity.create("user 1")

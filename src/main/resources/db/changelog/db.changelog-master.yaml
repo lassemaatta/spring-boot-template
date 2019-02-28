@@ -21,17 +21,17 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: creation_time
-                  type: timestamp with timezone
+                  type: timestamp with time zone
                   constraints:
                     nullable: false
               - column:
                   name: modification_time
-                  type: timestamp with timezone
+                  type: timestamp with time zone
                   constraints:
                     nullable: false
               - column:
                   name: deletion_time
-                  type: timestamp with timezone
+                  type: timestamp with time zone
               - column:
                   name: username
                   type: varchar(255)

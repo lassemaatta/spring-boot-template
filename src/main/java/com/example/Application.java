@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.feature.base.repository.BaseRepositoryImpl;
+import com.example.feature.base.repository.CustomRepositoryFactoryBean;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 @EntityScan(basePackageClasses = {
         Application.class,
         Jsr310JpaConverters.class})
-@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)
+@EnableJpaRepositories(repositoryFactoryBeanClass = CustomRepositoryFactoryBean.class)
 public class Application {
 
     public static void main(final String[] args) {
